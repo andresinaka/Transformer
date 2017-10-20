@@ -19,6 +19,7 @@
     "express": "^4.16.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-quill": "^1.1.0",
     "webpack": "^3.6.0",
     "webpack-dev-middleware": "^1.12.0"
   }
