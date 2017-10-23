@@ -7,9 +7,9 @@ class StyleEditor extends React.Component {
     super(props);
     this.state = { text: '' };
     this.toolbar = [
+      [{ 'color': [] }, { 'background': [] }],
       [ { 'font': [] }],
-      [{size: []}],
-      ['bold', 'italic', 'underline']
+      [{size: []}]
     ];
 
     this.handleChange = this.handleChange.bind(this);

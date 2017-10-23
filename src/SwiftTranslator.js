@@ -41,6 +41,18 @@ class FontColor extends Attribute {
   }
 }
 
+class BackgroundColor extends Attribute {
+  parse() {
+    let attributes = this.attributes
+    if (attributes && "background" in attributes) {
+      let [red, green, blue] = this.hexToRgb(attributes["background"]);
+
+      let color = `UIColor(red: ${red}/255, green: ${green}/255, blue: ${blue}/255, alpha: 1.0)`
+      return `NSAttributedStringKey.backgroundColor: ${color}`
+    }
+  }
+}
+
 class Translator {
   constructor(text, delta) {
     this.text = text;
@@ -51,7 +63,7 @@ class Translator {
     let text = this.text;
     let delta = this.delta;
     let start = 0;
-    let attributedString = `let attributedString = NSAttributedString(string: "${text}")`;
+    let attributedString = `let attributedString = NSAttributedString(string: ${JSON.stringify(text)})`;
 
     let self = this
     delta["ops"].forEach(function (item, index) {
@@ -71,7 +83,8 @@ class Translator {
   attributes(item) {
     return [
       new FontColor(item).parse(),
-      new FontAttribute(item).parse()
+      new FontAttribute(item).parse(),
+      new BackgroundColor(item).parse()
     ].filter(v => v);
   }
 
@@ -80,12 +93,11 @@ class Translator {
 
     let range = `NSMakeRange(${start}, ${length})`;
 
-    let cocoaAttributes = `
-      let ${attributeName}: [NSAttributedStringKey : Any] = [
-            ${attributes.join(",\n")}
-      ]
-      attributedString.addAttributes(${attributeName}, range: ${range})
-    `
+    let cocoaAttributes =  
+    `let ${attributeName}: [NSAttributedStringKey : Any] = [\n` +
+    `   ${attributes.join(",\n   ")}\n` +
+    `]\n` +
+    `attributedString.addAttributes(${attributeName}, range: ${range})\n\n`
 
     return cocoaAttributes;
   }
@@ -93,58 +105,3 @@ class Translator {
 }
 
 export default Translator;
-
-let contents = {
-  "ops": [
-    {
-      "attributes": {
-        "bold": true,
-        "italic": true,
-        "size": "large",
-        "font": "fafafa",
-        "color": "#0033ff"
-      },
-      "insert": "fafafa"
-    },
-    {
-      "insert": "\n"
-    },
-    {
-      "attributes": {
-        "italic": true
-      },
-      "insert": "fafafa"
-    },
-    {
-      "insert": "\n"
-    },
-    {
-      "attributes": {
-        "italic": true,
-        "bold": true
-      },
-      "insert": "fafafa"
-    },
-    {
-      "insert": "\n"
-    },
-    {
-      "attributes": {
-        "underline": true,
-        "italic": true,
-        "bold": true
-      },
-      "insert": "fafafa"
-    },
-    {
-      "insert": "\n"
-    }
-  ]
-};
-
-let text = "fafafa\nfafafa\nfafafa\nfafafa\n";
-let translator = new Translator(text, contents);
-
-
-console.log(translator.translate());
-
