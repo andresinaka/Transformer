@@ -1,68 +1,98 @@
-function translator(text, delta) {
-  let accumStart = 0
 
-  let attributedString = `let attributedString = NSAttributedString(string: "${text}")`
+class Attribute {
 
-  delta["ops"].forEach(function (item, index) {
-    let attributes = item["attributes"];
-    let piece = item["insert"];
-    let length =  piece.length;
-    let start = accumStart;
-
-    let attributesName = `attributes${index}`
-    let range = `NSMakeRange(${start}, ${length})`
-    let cocoaAttributes = `
-      let ${attributesName}: [NSAttributedStringKey : Any] = [
-            NSAttributedStringKey.font: ${fontAttribute(attributes)},
-            NSAttributedStringKey.foregroundColor: ${fontColor(attributes)}
-      ]
-
-      attributedString.addAttributes(${attributesName}, range: ${range})
-    `
-
-    accumStart = accumStart + length;
-    attributedString = attributedString + '\n' + cocoaAttributes
-  });
-
-  return attributedString
-}
-
-function fontAttribute(attributes) {
-  if(!attributes) { return }
-
-  if ("font" in attributes && "size" in attributes) {
-    let fontName = attributes["font"];
-    let fontSize = attributes["size"];
-    return `UIFont(name: "${fontName}", size: ${fontSize})`;
+  constructor(attributes) {
+    this.attributes = attributes;
   }
 
-  return
+  parse(){
+  }
+
+  hexToRgb(hex) {
+    return hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
+               ,(m, r, g, b) => '#' + r + r + g + g + b + b)
+              .substring(1).match(/.{2}/g)
+              .map(x => parseInt(x, 16))
+  }
 }
 
-function hexToRgb(hex) {
-  return hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
-             ,(m, r, g, b) => '#' + r + r + g + g + b + b)
-    .substring(1).match(/.{2}/g)
-    .map(x => parseInt(x, 16))
+class FontAttribute extends Attribute {
+  parse() {
+    let attributes = this.attributes
+    if (attributes && "font" in attributes && "size" in attributes) {
+      let fontName = attributes["font"];
+      let fontSize = attributes["size"];
+
+      let font = `UIFont(name: "${fontName}", size: ${fontSize})`;
+      return `NSAttributedStringKey.font: ${font}`
+    }
+  }
 }
 
-function fontColor(attributes) {
-  if(!attributes) { return }
-  if ("color" in attributes) {
-    let [red, green, blue] = hexToRgb(attributes["color"]);
+class FontColor extends Attribute {
+  parse() {
+    let attributes = this.attributes
+    if (attributes && "color" in attributes) {
+      let [red, green, blue] = this.hexToRgb(attributes["color"]);
 
-
-    return `UIColor(red: ${red}/255, green: ${green}/255, blue: ${blue}/255, alpha: 1.0)`
-  }  
+      let color = `UIColor(red: ${red}/255, green: ${green}/255, blue: ${blue}/255, alpha: 1.0)`
+      return `NSAttributedStringKey.foregroundColor: ${color}`
+    }
+  }
 }
 
-function attributesTranslator(attributes) {
-  attributes.forEach(function (attribute) {
+class Translator {
+  constructor(text, delta) {
+    this.text = text;
+    this.delta = delta;
+  }
 
-  })
+  translate() {
+    let text = this.text;
+    let delta = this.delta;
+    let start = 0;
+    let attributedString = `let attributedString = NSAttributedString(string: "${text}")`;
+
+    let self = this
+    delta["ops"].forEach(function (item, index) {
+      attributedString = attributedString + '\n' + self.addAttributes(
+        start,
+        item["insert"].length,
+        `attributes${index}`,
+        self.attributes(item["attributes"])
+      );
+
+      start = start + item["insert"].length;
+    });
+
+    return attributedString;
+  }
+
+  attributes(item) {
+    return [
+      new FontColor(item).parse(),
+      new FontAttribute(item).parse()
+    ].filter(v => v);
+  }
+
+  addAttributes(start, length, attributeName, attributes) {
+    if(attributes.length == 0) { return ""; }
+
+    let range = `NSMakeRange(${start}, ${length})`;
+
+    let cocoaAttributes = `
+      let ${attributeName}: [NSAttributedStringKey : Any] = [
+            ${attributes.join(",\n")}
+      ]
+      attributedString.addAttributes(${attributeName}, range: ${range})
+    `
+
+    return cocoaAttributes;
+  }
+
 }
 
-export default translator
+export default Translator;
 
 let contents = {
   "ops": [
@@ -112,7 +142,9 @@ let contents = {
   ]
 };
 
-let text = "fafafa\nfafafa\nfafafa\nfafafa\n"
+let text = "fafafa\nfafafa\nfafafa\nfafafa\n";
+let translator = new Translator(text, contents);
 
-console.log(translator(text, contents))
+
+console.log(translator.translate());
 
