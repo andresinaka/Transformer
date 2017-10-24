@@ -1,0 +1,33 @@
+code, pre {
+  border-color: #1d1f21;
+}
+
+.ql-container {
+  height: calc(100% - 43px);
+}
+
+.code-font-size {
+  font-size: 13px;
+}
+
+.bg-color {
+  background-color: #1d1f21;
+}
+
+.monospace{
+  font-family: monospace,monospace;
+}
+
+.bg-color a {
+  a.selected: white;
+  color: white;
+}
+
+.half { 
+  height: 50%;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}

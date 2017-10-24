@@ -1,57 +1,6 @@
-
-class Attribute {
-
-  constructor(attributes) {
-    this.attributes = attributes;
-  }
-
-  parse(){
-  }
-
-  hexToRgb(hex) {
-    return hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
-               ,(m, r, g, b) => '#' + r + r + g + g + b + b)
-              .substring(1).match(/.{2}/g)
-              .map(x => parseInt(x, 16))
-  }
-}
-
-class FontAttribute extends Attribute {
-  parse() {
-    let attributes = this.attributes
-    if (attributes && "font" in attributes && "size" in attributes) {
-      let fontName = attributes["font"];
-      let fontSize = attributes["size"];
-
-      let font = `UIFont(name: "${fontName}", size: ${fontSize})`;
-      return `NSAttributedStringKey.font: ${font}`
-    }
-  }
-}
-
-class FontColor extends Attribute {
-  parse() {
-    let attributes = this.attributes
-    if (attributes && "color" in attributes) {
-      let [red, green, blue] = this.hexToRgb(attributes["color"]);
-
-      let color = `UIColor(red: ${red}/255, green: ${green}/255, blue: ${blue}/255, alpha: 1.0)`
-      return `NSAttributedStringKey.foregroundColor: ${color}`
-    }
-  }
-}
-
-class BackgroundColor extends Attribute {
-  parse() {
-    let attributes = this.attributes
-    if (attributes && "background" in attributes) {
-      let [red, green, blue] = this.hexToRgb(attributes["background"]);
-
-      let color = `UIColor(red: ${red}/255, green: ${green}/255, blue: ${blue}/255, alpha: 1.0)`
-      return `NSAttributedStringKey.backgroundColor: ${color}`
-    }
-  }
-}
+import FontColor from './attributes/FontColor';
+import FontAttribute from './attributes/FontAttribute';
+import BackgroundColor from './attributes/BackgroundColor';
 
 class Translator {
   constructor(text, delta) {
@@ -63,7 +12,7 @@ class Translator {
     let text = this.text;
     let delta = this.delta;
     let start = 0;
-    let attributedString = `let attributedString = NSAttributedString(string: ${JSON.stringify(text)})`;
+    let attributedString = `let attributedString = NSMutableAttributedString(string: ${JSON.stringify(text)})`;
 
     let self = this
     delta["ops"].forEach(function (item, index) {
@@ -97,7 +46,7 @@ class Translator {
     `let ${attributeName}: [NSAttributedStringKey : Any] = [\n` +
     `   ${attributes.join(",\n   ")}\n` +
     `]\n` +
-    `attributedString.addAttributes(${attributeName}, range: ${range})\n\n`
+    `attributedString.addAttributes(${attributeName}, range: ${range})\n`
 
     return cocoaAttributes;
   }

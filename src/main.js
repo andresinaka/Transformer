@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Counter from './Counter';
 import StyleEditor from './StyleEditor';
-import ResultBox from './ResultBox';
 import SwiftTranslator from './SwiftTranslator';
 import Highlight from 'react-highlight';
 
@@ -30,12 +29,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div> 
-        <StyleEditor onChange={this.onChange} />
-        <Highlight className='swift'>
-          {this.state.code}
-        </Highlight>
-      </div>
+        <div className="container-fluid">
+          <div className="row half">
+            <div className="col nopadding">
+              <StyleEditor onChange={this.onChange} />
+            </div>
+          </div>
+          <div className="row half bg-color">
+            <div className="col nopadding">
+              <Highlight className='swift code-font-size'>
+                {this.state.code}
+              </Highlight>
+            </div>
+          </div>
+        </div>
     )
   }
 }
