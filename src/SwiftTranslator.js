@@ -12,7 +12,7 @@ class Translator {
     let text = this.text;
     let delta = this.delta;
     let start = 0;
-    let attributedString = `let attributedString = NSMutableAttributedString(string: ${JSON.stringify(text)})`;
+    let attributedString = `let attributedString = NSMutableAttributedString(string: ${JSON.stringify(text)})\n`;
 
     let self = this
     delta["ops"].forEach(function (item, index) {

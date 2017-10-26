@@ -42,6 +42,7 @@ To Do
 - [x] Add `NSAttributedStringKey.foregroundColor`
 - [x] Add `NSAttributedStringKey.font`
 - [x] Add `NSAttributedStringKey.backgroundColor`
+- [x] Add button to copy the generated code.
 - [ ] Be able to drag and drop custom fonts to be used
 - [ ] Use numbers for text size instead of clases
 - [ ] Add tests
