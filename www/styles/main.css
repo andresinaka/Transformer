@@ -1,3 +1,10 @@
+.style-double {
+    border-bottom: 1px double;
+}
+
+
+
+
 .ql-container {
   height: calc(100% - 43px);
 }
