@@ -2,8 +2,14 @@
     border-bottom: 1px double;
 }
 
+.ql-snow .ql-picker.ql-underline-style .ql-picker-label[data-label]:not([data-label=''])::before,
+.ql-snow .ql-picker.ql-underline-style .ql-picker-item[data-label]:not([data-label=''])::before {
+  content: attr(data-label);
+}
 
-
+.ql-snow .ql-picker.ql-underline-style {
+    width: 120px;
+}
 
 .ql-container {
   height: calc(100% - 43px);

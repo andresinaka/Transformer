@@ -18,13 +18,6 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
-      },
-      {
-        test: /\.svg/,
-        use: {
-            loader: 'svg-url-loader',
-            options: {}
-        }
       }
     ],
     rules: [
@@ -34,6 +27,13 @@ module.exports = {
         use: [
           'babel-loader',
         ],
+      },
+      {
+        test: /\.svg/,
+        use: {
+            loader: 'svg-url-loader',
+            options: {}
+        }
       }
     ],
   },

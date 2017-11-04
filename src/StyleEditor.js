@@ -14,12 +14,12 @@ class CustomSnow extends Snow {
   buildPickers(selects, icons) {
     super.buildPickers(selects, icons);
 
-    let newClases = ['ql-underlineStyle']
+    let newClases = ['ql-underline-style']
     let newSelectors = selects.filter(select => newClases.includes(select.getAttribute('class')));
 
     let self = this
     newSelectors.forEach(function(select) {
-      if (select.classList.contains('ql-underlineStyle')) {
+      if (select.classList.contains('ql-underline-style')) {
         console.log("cacatua")
         fillSelect(select, ["Fafafa","fofofo"]);
       }
@@ -85,7 +85,7 @@ class UnderlineStyle extends Inline {
     }
   }
 }
-UnderlineStyle.blotName = 'underlineStyle';
+UnderlineStyle.blotName = 'underline-style';
 UnderlineStyle.tagName = 'u';
 
 Quill.register(UnderlineStyle)
@@ -104,7 +104,7 @@ const CustomToolbar = () => (
       <option value="32px">32 Points</option>
     </select>
     <button className="ql-clean"/>
-    <select className="ql-underlineStyle">
+    <select className="ql-underline-style">
       <option value="style-none" defaultValue>.styleNone</option>
       <option value="style-double">.styleDouble</option>
     </select>
