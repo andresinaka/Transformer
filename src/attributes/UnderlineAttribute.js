@@ -7,6 +7,9 @@ class UnderlineAttribute extends Attribute {
     if (attributes && "underline-style") {
       
       let underline = this.valueFromClass(attributes["underline-style"]);
+
+      if(!underline) { return null }
+
       return `NSAttributedStringKey.underlineStyle: NSUnderlineStyle.${underline}.rawValue`;
     }
   }

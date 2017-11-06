@@ -9,15 +9,21 @@ let Inline = Quill.import('blots/inline');
 var SizeStyle = Quill.import('attributors/style/size');
 SizeStyle.whitelist = ['13px','15px', '18px', '32px'];
 
+var Font = Quill.import('formats/font');
+Font.whitelist = ['helvetica-neue', 'helvetica-neue-bold', 'helvetica-neue-light'];
+
+Quill.register(Font, true);
 Quill.register(UnderlineStyle)
 Quill.register(SizeStyle, true);
 Quill.register('themes/snow', CustomSnow, true);
 
-
 const CustomToolbar = () => (
   <div id="toolbar">
-    <select className="ql-color"/>
-    <select className="ql-background"/>
+    <select className="ql-font">
+      <option value="helvetica-neue" defaultValue>Regular</option>
+      <option value="helvetica-neue-bold">Bold</option>
+      <option value="helvetica-neue-light">Light</option>
+    </select>
     <select className="ql-size">
       <option value="13px" defaultValue>13 Points</option>
       <option value="15px">15 Points</option>
@@ -30,6 +36,8 @@ const CustomToolbar = () => (
       <option value="style-double">.styleDouble</option>
       <option value="style-thick">.styleThick</option>
     </select>
+    <select className="ql-color"/>
+    <select className="ql-background"/>
     <button className="ql-clean"/>
   </div>
 )
