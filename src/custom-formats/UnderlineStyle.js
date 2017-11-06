@@ -9,10 +9,7 @@ class UnderlineStyle extends Inline {
       "style-thick",
       "style-double",
       "pattern-dot",
-      "pattern-dash",
-      "pattern-dash-dot",
-      "pattern-Dash-dot-dot",
-      "by-word"
+      "pattern-dash"
     ];
 
     let node = super.create();

@@ -1,6 +1,7 @@
 import FontColor from './attributes/FontColor';
 import FontAttribute from './attributes/FontAttribute';
 import BackgroundColor from './attributes/BackgroundColor';
+import UnderlineStyle from './attributes/UnderlineAttribute';
 
 class Translator {
   constructor(text, delta) {
@@ -33,7 +34,8 @@ class Translator {
     return [
       new FontColor(item).parse(),
       new FontAttribute(item).parse(),
-      new BackgroundColor(item).parse()
+      new BackgroundColor(item).parse(),
+      new UnderlineStyle(item).parse()
     ].filter(v => v);
   }
 

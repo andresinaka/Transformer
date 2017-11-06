@@ -1,10 +1,20 @@
+.pattern-dash{
+  text-decoration: none;
+  border-bottom: dashed;
+}
+
+.pattern-dot{
+  text-decoration: none;
+  border-bottom: dotted;
+}
+
 .style-double {
   border-bottom: 1px double;
 }
 
 .style-thick {
   text-decoration: none;
-  border-bottom: thick solid black;
+  border-bottom: 3px solid;
 }
 
 .ql-snow .ql-picker.ql-underline-style .ql-picker-label[data-label]:not([data-label=''])::before,

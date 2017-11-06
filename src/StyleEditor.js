@@ -27,6 +27,7 @@ const CustomToolbar = () => (
     <button className="ql-clean"/>
     <select className="ql-underline-style">
       <option value="false" defaultValue>.styleNone</option>
+      <option value="style-single">.styleSingle</option>
       <option value="style-double">.styleDouble</option>
       <option value="style-thick">.styleThick</option>
     </select>
