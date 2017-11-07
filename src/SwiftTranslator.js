@@ -42,7 +42,7 @@ class Translator {
   addAttributes(start, length, attributeName, attributes) {
     if(attributes.length == 0) { return ""; }
 
-    let range = `NSMakeRange(${start}, ${length})`;
+    let range = `NSRange(location: ${start}, length: ${length})`;
 
     let cocoaAttributes =  
     `let ${attributeName}: [NSAttributedStringKey : Any] = [\n` +
