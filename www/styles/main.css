@@ -16,12 +16,6 @@
   font-weight: lighter;
 }
 
-/*#wrapper .ql-picker-label::before,
-#wrapper .ql-picker-item::before {
-  content: "Aref Ruqaa";
-  font-family: "Aref Ruqaa";
-}*/
-
 .ql-picker-label[data-value="false"],
 .ql-picker-item[data-value="false"] {
   font-family: "Helvetica Neue";
