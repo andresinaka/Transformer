@@ -2,6 +2,7 @@ import FontColor from './attributes/FontColor';
 import FontAttribute from './attributes/FontAttribute';
 import BackgroundColor from './attributes/BackgroundColor';
 import UnderlineStyle from './attributes/UnderlineAttribute';
+import ParagraphAttribute from './attributes/ParagraphAttribute';
 
 class Translator {
   constructor(text, delta) {
@@ -15,19 +16,47 @@ class Translator {
     let start = 0;
     let attributedString = `let attributedString = NSMutableAttributedString(string: ${JSON.stringify(text)})\n`;
 
-    let self = this
-    delta["ops"].forEach(function (item, index) {
-      attributedString = attributedString + '\n' + self.addAttributes(
-        start,
-        item["insert"].length,
-        `attributes${index}`,
-        self.attributes(item["attributes"])
-      );
+    let ops = delta["ops"];
+    for (let index = 0; index < ops.length; index++) { 
+      let item = ops[index];
+      let itemAttributes = item["attributes"];
+      let length = item["insert"].length;
+      let attributeName = `attributes${index}`;
+      let attributes = this.attributes(itemAttributes);
 
-      start = start + item["insert"].length;
-    });
+      let nextItem = this.hasParagraphAttributes(index, ops)
+      if(nextItem) {
+        let nextItemAttributes = nextItem["attributes"]; 
+        let paragraphAttribute = new ParagraphAttribute(nextItemAttributes, index);
+        attributedString = attributedString + paragraphAttribute.paragraphStyle() + '\n';
+        attributes.push(paragraphAttribute.parse());
+      }
+
+      if(attributes.length > 0) {
+        attributedString = attributedString + '\n' + this.addAttributes(
+          `NSMakeRange(${start}, ${length})`,
+          attributeName,
+          attributes
+        );
+      }
+
+      start = start + length;
+    }
 
     return attributedString;
+  }
+
+  hasParagraphAttributes(index, ops) {
+    if((index + 1) < ops.length) {
+      let nextItem = ops[index + 1];
+      let attributes = nextItem["attributes"];
+
+      if (attributes && "align" in attributes) {
+        return nextItem;
+      }
+
+      return false;
+    }
   }
 
   attributes(item) {
@@ -39,10 +68,8 @@ class Translator {
     ].filter(v => v);
   }
 
-  addAttributes(start, length, attributeName, attributes) {
+  addAttributes(range, attributeName, attributes) {
     if(attributes.length == 0) { return ""; }
-
-    let range = `NSMakeRange(${start}, ${length})`;
 
     let cocoaAttributes =  
     `let ${attributeName}: [NSAttributedStringKey : Any] = [\n` +
@@ -52,7 +79,6 @@ class Translator {
 
     return cocoaAttributes;
   }
-
 }
 
 export default Translator;

@@ -36,6 +36,7 @@ const CustomToolbar = () => (
       <option value="style-double">.styleDouble</option>
       <option value="style-thick">.styleThick</option>
     </select>
+    <select className="ql-align"></select>
     <select className="ql-color"/>
     <select className="ql-background"/>
     <button className="ql-clean"/>
