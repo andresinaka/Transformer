@@ -1,67 +1,4 @@
 
-/* Font Styles */
-
-.ql-font-helvetica-neue {
-  font-family: "Helvetica Neue";
-  font-weight: normal;
-}
-
-.ql-font-helvetica-neue-bold {
-  font-family: "Helvetica Neue";
-  font-weight: bold;
-}
-
-.ql-font-helvetica-neue-light {
-  font-family: "Helvetica Neue";
-  font-weight: lighter;
-}
-
-.ql-picker-label[data-value="false"],
-.ql-picker-item[data-value="false"] {
-  font-family: "Helvetica Neue";
-  font-weight: normal;
-}
-
-.ql-picker-label[data-value="helvetica-neue-light"],
-.ql-picker-item[data-value="helvetica-neue-light"] {
-  font-family: "Helvetica Neue";
-  font-weight: lighter;
-}
-
-.ql-picker-label[data-value="helvetica-neue-bold"],
-.ql-picker-item[data-value="helvetica-neue-bold"] {
-  font-family: "Helvetica Neue";
-  font-weight: bold;
-}
-
-/* Underline Styles */
-.pattern-dash{
-  text-decoration: none;
-  border-bottom: dashed;
-}
-
-.pattern-dot{
-  text-decoration: none;
-  border-bottom: dotted;
-}
-
-.style-double {
-  border-bottom: 1px double;
-}
-
-.style-thick {
-  text-decoration: none;
-  border-bottom: 3px solid;
-}
-
-.ql-snow .ql-picker.ql-underline-style .ql-picker-label[data-label]:not([data-label=''])::before,
-.ql-snow .ql-picker.ql-underline-style .ql-picker-item[data-label]:not([data-label=''])::before {
-  content: attr(data-label);
-}
-
-.ql-snow .ql-picker.ql-underline-style {
-    width: 120px;
-}
 
 .ql-container {
   height: calc(100% - 43px);
@@ -73,6 +10,55 @@
 
 .copy-image {
   top: 3px;
+}
+
+.title-area {
+    padding: 10px 15px 0 15px;
+    -webkit-flex-shrink: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    min-width: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.title {
+    font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 0 0 1px 0;
+}
+
+.title-area .title {
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif; 
+  width: 100%; 
+  font-size: 1.3rem; 
+  margin: 0 0 1px 0; 
+}
+
+.subtitle {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+.main-header {
+  height: 60px;
+  min-height: 60px;
+  background-color: #1d1f21;
+}
+
+.icon-image {
+  height: 40;
+  width: 40;
+  margin-right: 10px;
 }
 
 .bg-color {
@@ -91,9 +77,13 @@ pre {
   font-family: monospace,monospace;
 }
 
+.white-color {
+  color: white;
+}
+
 .bg-color a {
   a.selected: white;
-  color: white;
+  color: white; 
 }
 
 .half { 

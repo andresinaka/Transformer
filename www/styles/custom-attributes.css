@@ -1,0 +1,63 @@
+/* Font Styles */
+
+.ql-font-helvetica-neue {
+  font-family: "Helvetica Neue";
+  font-weight: normal;
+}
+
+.ql-font-helvetica-neue-bold {
+  font-family: "Helvetica Neue";
+  font-weight: bold;
+}
+
+.ql-font-helvetica-neue-light {
+  font-family: "Helvetica Neue";
+  font-weight: lighter;
+}
+
+.ql-picker-label[data-value="false"],
+.ql-picker-item[data-value="false"] {
+  font-family: "Helvetica Neue";
+  font-weight: normal;
+}
+
+.ql-picker-label[data-value="helvetica-neue-light"],
+.ql-picker-item[data-value="helvetica-neue-light"] {
+  font-family: "Helvetica Neue";
+  font-weight: lighter;
+}
+
+.ql-picker-label[data-value="helvetica-neue-bold"],
+.ql-picker-item[data-value="helvetica-neue-bold"] {
+  font-family: "Helvetica Neue";
+  font-weight: bold;
+}
+
+/* Underline Styles */
+.pattern-dash{
+  text-decoration: none;
+  border-bottom: dashed;
+}
+
+.pattern-dot{
+  text-decoration: none;
+  border-bottom: dotted;
+}
+
+.style-double {
+  border-bottom: 1px double;
+}
+
+.style-thick {
+  text-decoration: none;
+  border-bottom: 3px solid;
+}
+
+.ql-snow .ql-picker.ql-underline-style .ql-picker-label[data-label]:not([data-label=''])::before,
+.ql-snow .ql-picker.ql-underline-style .ql-picker-item[data-label]:not([data-label=''])::before {
+  content: attr(data-label);
+}
+
+.ql-snow .ql-picker.ql-underline-style {
+    width: 120px;
+}

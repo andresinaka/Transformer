@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="101"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+
+ <g style="">
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="103" width="102" y="-1" x="-1"/>
+ </g>
+ <g style="" class="currentLayer">
+  <title>Layer 1</title>
+  <g id="svg_1" class="">
+   <rect id="svg_2" height="99" width="185" x="-192"/>
+   <rect id="svg_3" height="30" width="100" y="-36"/>
+   <text id="svg_4" font-size="2.4" font-family="'Helvetica'" fill="#000000" transform="matrix(1,0,0,1,66,-19.5) ">http://thenounproject.com</text>
+   <text id="svg_5" transform="matrix(1,0,0,1,7.166,-24.5) ">
+    <tspan id="svg_6" font-size="6.1578" font-family="'Helvetica-Bold'" fill="#000000" y="0" x="0">The Noun Project</tspan>
+    <tspan id="svg_7" font-size="4" font-family="'Helvetica-Bold'" fill="#000000" y="4.8" x="1.12">Icon Template</tspan>
+   </text>
+   <text id="svg_8" font-size="6.1578" font-family="'Helvetica-Bold'" fill="#000000" transform="matrix(1,0,0,1,-178.5,10.5) ">Reminders</text>
+   <line id="svg_9" y2="-14.5" x2="18" y1="-14.5" x1="8" stroke-miterlimit="10" stroke="#FFFFFF" fill="#000000"/>
+   <line id="svg_10" y2="16.5" x2="-162" y1="16.5" x1="-179" stroke-miterlimit="10" stroke="#FFFFFF" fill="#000000"/>
+   <g id="svg_11">
+    <g id="svg_12">
+     <g id="svg_13">
+      <rect id="svg_14" height="8.642000198364258" width="8.720999717712402" fill="#000000" y="31.31800079345703" x="-170.802001953125"/>
+      <path id="svg_15" d="m-164.455,42.312l4.747,0l0,-4.703l-4.747,0l0,4.703zm5.189,0.437l-5.63,0l0,-5.579l5.63,0l0,5.579l0,0zm-6.955,1.313l8.279,0l0,-8.203l-8.279,0l0,8.203l0,0zm8.721,0.438l-9.163,0l0,-9.079l9.163,0l0,9.079l0,0z" fill="#000000"/>
+      <polygon id="svg_16" points="-166.149,44.133 -166.292,43.991 -158.013,35.787 -157.871,35.929     " fill="#000000"/>
+     </g>
+    </g>
+   </g>
+   <rect id="svg_17" height="32.5" width="35" fill="none" y="58" x="-179"/>
+   <text id="svg_18" transform="matrix(1,0,0,1,-179,60.1572) ">
+    <tspan id="svg_19" font-size="3" font-family="'Helvetica-Bold'" fill="#000000" y="0" x="0">Strokes</tspan>
+    <tspan id="svg_20" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="5" x="0">Try to keep strokes at 4px</tspan>
+    <tspan id="svg_21" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="10" x="0">Minimum stroke weight is 2px</tspan>
+    <tspan id="svg_22" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="14.5" x="0">For thicker strokes use even</tspan>
+    <tspan id="svg_23" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="17.5" x="0">numbers: 6px, 8px etc.</tspan>
+    <tspan id="svg_24" font-size="2.4" font-family="'Helvetica-Bold'" fill="#000000" y="22" x="0">Remember to expand strokes</tspan>
+    <tspan id="svg_25" font-size="2.4" font-family="'Helvetica-Bold'" fill="#000000" y="25" x="0">before saving as an SVG</tspan>
+   </text>
+   <rect id="svg_26" height="32.5" width="35" fill="none" y="58" x="-136.5"/>
+   <text id="svg_27" transform="matrix(1,0,0,1,-136.5,60.1572) ">
+    <tspan id="svg_28" font-size="3" font-family="'Helvetica-Bold'" fill="#000000" y="0" x="0">Size</tspan>
+    <tspan id="svg_29" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="5" x="0">Cannot be wider or taller than</tspan>
+    <tspan id="svg_30" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="8.5" x="0">100px (artboard size)</tspan>
+    <tspan id="svg_31" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="13.5" x="0">Scale your icon to fill as much of</tspan>
+    <tspan id="svg_32" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="16.5" x="0">the artboard as possible</tspan>
+   </text>
+   <rect id="svg_33" height="32.5" width="35" fill="none" y="58" x="-94"/>
+   <text id="svg_34" transform="matrix(1,0,0,1,-94,60.1572) ">
+    <tspan id="svg_35" font-size="3" font-family="'Helvetica-Bold'" fill="#000000" y="0" x="0">Ungroup</tspan>
+    <tspan id="svg_36" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="5" x="0">If your design has more than one</tspan>
+    <tspan id="svg_37" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="8" x="0">shape, make sure to ungroup</tspan>
+   </text>
+   <rect id="svg_38" height="32.5" width="35" fill="none" y="58" x="-50"/>
+   <text id="svg_39" transform="matrix(1,0,0,1,-50,60.1572) ">
+    <tspan id="svg_40" font-size="3" font-family="'Helvetica-Bold'" fill="#000000" y="0" x="0">Save as</tspan>
+    <tspan id="svg_41" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="5" x="0">Save as .SVG and make sure</tspan>
+    <tspan id="svg_42" font-size="2.4" font-family="'Helvetica'" fill="#000000" y="8" x="0">“Use Artboards” is checked</tspan>
+   </text>
+   <text id="svg_43" font-size="2.5731" font-family="'Helvetica'" fill="#000000" transform="matrix(1.0074,0,0,1,-125.542,30.5933) ">100px</text>
+   <text id="svg_44" font-size="5.1462" font-family="'Helvetica-Bold'" fill="#000000" transform="matrix(1.0074,0,0,1,-41,39) ">.SVG</text>
+   <rect id="svg_45" height="10.1850004196167" width="10.26099967956543" fill="#000000" y="34.814998626708984" x="-126.51399993896484"/>
+   <rect id="svg_46" height="2.3369998931884766" width="0.5220000147819519" fill="#000000" y="31.766000747680664" x="-126.47699737548828"/>
+   <rect id="svg_47" height="2.3369998931884766" width="0.5230000019073486" fill="#000000" y="31.766000747680664" x="-116.81199645996094"/>
+   <rect id="svg_48" height="0.5720000267028809" width="11.232999801635742" fill="#000000" y="32.33700180053711" x="-127"/>
+   <g id="svg_49">
+    <rect id="svg_50" height="10.156000137329102" width="10.305000305175781" fill="#000000" y="33.84400177001953" x="-83.80500030517578"/>
+    <rect id="svg_51" height="3.260999917984009" width="3.308000087738037" fill="#000000" y="28.707000732421875" x="-76.80899810791016"/>
+   </g>
+   <rect id="svg_52" height="30" width="30" stroke-miterlimit="10" stroke="#FFFFFF" fill="#000000" y="22.5" x="-178.5"/>
+   <rect id="svg_53" height="30" width="30" stroke-miterlimit="10" stroke="#FFFFFF" fill="#000000" y="22.5" x="-136.5"/>
+   <rect id="svg_54" height="30" width="30" stroke-miterlimit="10" stroke="#FFFFFF" fill="#000000" y="22.5" x="-93.5"/>
+   <rect id="svg_55" height="30" width="30" stroke-miterlimit="10" stroke="#FFFFFF" fill="#000000" y="22.5" x="-49.5"/>
+  </g>
+  <g id="svg_56" class="" fill="#ffffff" fill-opacity="1">
+   <g id="svg_57" fill="#ffffff" fill-opacity="1">
+    <g id="svg_58" fill="#ffffff" fill-opacity="1">
+     <g id="svg_59" fill="#ffffff" fill-opacity="1">
+      <path id="svg_60" d="m75.71716723227969,35.99254974510752 l-51.092945516822724,0 c-5.241494097944168,0 -9.490038856657502,4.4969636863043725 -9.490038856657502,9.8466870831113 l0,27.198240715551748 l69.73162879748338,0 l0,-27.198240715551748 c0,-5.349723396806929 -3.9064239549256836,-9.8466870831113 -9.148644424003159,-9.8466870831113 zm-41.251343031644566,22.09984173086908 c-3.4495365120755066,0 -6.245339004174606,-2.853912182763669 -6.245339004174606,-6.373906694769966 c0,-3.5199945120062965 2.7958024920990994,-6.374633065903272 6.245339004174606,-6.374633065903272 s6.244612633041298,2.854638553896976 6.244612633041298,6.374633065903272 c0,3.5199945120062965 -2.7950761209657924,6.373906694769966 -6.244612633041298,6.373906694769966 zm31.939265102647312,0 c-3.448810140942199,0 -6.245339004174606,-2.853912182763669 -6.245339004174606,-6.373906694769966 c0,-3.5199945120062965 2.7965288632324063,-6.374633065903272 6.245339004174606,-6.374633065903272 c3.4480837698088918,0 6.244612633041298,2.854638553896976 6.244612633041298,6.374633065903272 c0,3.5199945120062965 -2.7965288632324063,6.373906694769966 -6.244612633041298,6.373906694769966 z" clip-rule="evenodd" fill-rule="evenodd" fill="#ffffff" fill-opacity="1"/>
+     </g>
+    </g>
+   </g>
+   <g id="svg_61" fill="#ffffff" fill-opacity="1">
+    <g id="svg_62" fill="#ffffff" fill-opacity="1">
+     <g id="svg_63" fill="#ffffff" fill-opacity="1">
+      <path id="svg_64" d="m28.331619979856505,75.53837335574697 l43.143539833909614,0 c1.2377364111553302,0 2.239402203985847,1.02345692682973 2.239402203985847,2.285889956517502 c0,1.2631594008210791 -1.0016657928305168,2.2866163276508096 -2.239402203985847,2.2866163276508096 l-43.143539833909614,0 c-1.2370100400220227,0 -2.240128575119154,-1.02345692682973 -2.240128575119154,-2.2866163276508096 c0,-1.261706658554465 1.0031185350971308,-2.285889956517502 2.240128575119154,-2.285889956517502 z" clip-rule="evenodd" fill-rule="evenodd" fill="#ffffff" fill-opacity="1"/>
+     </g>
+    </g>
+   </g>
+   <g id="svg_65" fill="#ffffff" fill-opacity="1">
+    <g id="svg_66" fill="#ffffff" fill-opacity="1">
+     <g id="svg_67" fill="#ffffff" fill-opacity="1">
+      <path id="svg_68" d="m35.6272916427932,82.2253460089723 l28.938625950955604,0 c1.2377364111553302,0 2.240128575119154,1.0241832979630372 2.240128575119154,2.2873426987841166 s-1.0023921639638238,2.285889956517502 -2.240128575119154,2.285889956517502 l-28.938625950955604,0 c-1.2370100400220227,0 -2.240128575119154,-1.0227305556964228 -2.240128575119154,-2.285889956517502 s1.0031185350971308,-2.2873426987841166 2.240128575119154,-2.2873426987841166 z" clip-rule="evenodd" fill-rule="evenodd" fill="#ffffff" fill-opacity="1"/>
+     </g>
+    </g>
+   </g>
+   <g id="svg_69" fill="#ffffff" fill-opacity="1">
+    <g id="svg_70" fill="#ffffff" fill-opacity="1">
+     <g id="svg_71" fill="#ffffff" fill-opacity="1">
+      <path id="svg_72" d="m55.23858587095209,18.857454710392588 c0,-2.5713538119071995 -1.9764558537286696,-4.65603896449863 -4.496237315171065,-4.65603896449863 c-2.5176023480424727,0 -4.373480593642161,2.0846851525914305 -4.373480593642161,4.65603896449863 c0,1.5987428644089676 0.7256447621738124,3.008629234158085 2.1783870287880487,3.8468615219945006 l0,7.922529950980742 c0,1.3575876481510047 0.8505805971026358,2.4573135439779823 2.1791133999213557,2.4573135439779823 c1.3299855450853344,0 2.1791133999213557,-1.0997258958269776 2.1791133999213557,-2.4573135439779823 l0,-7.790330404718846 c1.452742266614237,-0.8164411538372015 2.3331040801824647,-2.290248183317345 2.3331040801824647,-3.9790610682563954 z" clip-rule="evenodd" fill-rule="evenodd" fill="#ffffff" fill-opacity="1"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
