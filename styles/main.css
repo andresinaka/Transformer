@@ -1,3 +1,78 @@
+.tabbar li .tab-name {
+    color: #fff;
+    padding: 5px 20px 5px 20px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;*/
+}
+
+nav {
+  width: 100%;
+}
+
+.swift-border-color {
+  border-top: 3px solid #fe3926;
+}
+
+.objective-c-border-color {
+  border-top: 3px solid #4dabe3;
+}
+
+.copy-border-color {
+  border-top: 3px solid #fcd000;
+}
+
+.tabbar li .tab-contents {
+    cursor: pointer;
+}
+
+.tabbar li .copy-button {
+  background-color: #222;
+  border: 0px;
+}
+
+.float-right {
+  float:right;
+}
+
+.tabbar li {
+    opacity: 0.3333;
+    display: inline-block;
+    color: #1d1f21;
+    height: 33px;
+    font-size: 0.85rem;
+}
+
+.tabbar li.selected-tab{
+    opacity: 1;
+}
+
+.tabbar li.full-opacity{
+    opacity: 1;
+}
+
+.tabbar ul {
+    list-style: none;
+    padding-left: 0px;
+    height: 33px;
+    background: #222;
+    box-shadow: inset 0 1px 1px 0 black;
+    margin-bottom: 0;
+}
+
+.tabbar-bg-color {
+  background-color: #222;
+}
+
+
+
+
+
 
 
 .ql-container {

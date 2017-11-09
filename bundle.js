@@ -14261,7 +14261,7 @@ var App = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'row' },
+          { className: 'row tabbar-bg-color' },
           _react2.default.createElement(_SelectionBar2.default, { copyButtonClick: this.copyButtonClick })
         ),
         _react2.default.createElement(
@@ -34546,6 +34546,7 @@ var StyleEditor = function (_React$Component) {
         _react2.default.createElement(CustomToolbar, null),
         _react2.default.createElement(_reactQuill2.default, { value: this.state.text,
           onChange: this.handleChange,
+          placeholder: 'Write the text to format!',
           modules: StyleEditor.modules,
           theme: 'snow' })
       );
@@ -45583,7 +45584,7 @@ exports.default = ParagraphAttribute;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+   value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -45605,35 +45606,80 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var SelectionBar = function (_React$Component) {
-  _inherits(SelectionBar, _React$Component);
+   _inherits(SelectionBar, _React$Component);
 
-  function SelectionBar(props) {
-    _classCallCheck(this, SelectionBar);
+   function SelectionBar(props) {
+      _classCallCheck(this, SelectionBar);
 
-    return _possibleConstructorReturn(this, (SelectionBar.__proto__ || Object.getPrototypeOf(SelectionBar)).call(this, props));
-  }
+      return _possibleConstructorReturn(this, (SelectionBar.__proto__ || Object.getPrototypeOf(SelectionBar)).call(this, props));
+   }
 
-  _createClass(SelectionBar, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'col-12 nopadding' },
-        _react2.default.createElement(
-          'button',
-          { type: 'button',
-            onClick: this.props.copyButtonClick,
-            className: 'float-right copy-button' },
-          _react2.default.createElement('img', { src: 'images/copy.svg',
-            className: 'copy-image',
-            width: '13',
-            alt: 'Copy to clipboard' })
-        )
-      );
-    }
-  }]);
+   _createClass(SelectionBar, [{
+      key: 'render',
+      value: function render() {
+         return _react2.default.createElement(
+            'nav',
+            { className: 'tabbar' },
+            _react2.default.createElement(
+               'ul',
+               null,
+               _react2.default.createElement(
+                  'li',
+                  { className: 'selected-tab' },
+                  _react2.default.createElement(
+                     'div',
+                     { className: 'tab-contents swift-border-color' },
+                     _react2.default.createElement(
+                        'span',
+                        { className: 'tab-name' },
+                        'Swift 4'
+                     )
+                  )
+               ),
+               _react2.default.createElement(
+                  'li',
+                  { className: '' },
+                  _react2.default.createElement(
+                     'div',
+                     { className: 'tab-contents objective-c-border-color ' },
+                     _react2.default.createElement(
+                        'span',
+                        { className: 'tab-name' },
+                        'Objective-C'
+                     )
+                  )
+               ),
+               _react2.default.createElement(
+                  'li',
+                  { className: 'full-opacity tab-name float-right' },
+                  _react2.default.createElement(
+                     'div',
+                     { className: 'tab-contents copy-border-color' },
+                     _react2.default.createElement(
+                        'span',
+                        { className: 'tab-name', onClick: this.props.copyButtonClick },
+                        'Copy'
+                     )
+                  )
+               )
+            )
+         )
 
-  return SelectionBar;
+         // <div className = "col-12 nopadding">
+         //   <button type="button"
+         //           onClick={this.props.copyButtonClick}
+         //           className="float-right copy-button" >
+         //     <img src="images/copy.svg"
+         //          className ="copy-image"
+         //          width="13" 
+         //          alt="Copy to clipboard"/>
+         //   </button>
+         // </div>
+         ;
+      }
+   }]);
+
+   return SelectionBar;
 }(_react2.default.Component);
 
 exports.default = SelectionBar;
