@@ -61,6 +61,7 @@ class StyleEditor extends React.Component {
         <CustomToolbar />
         <ReactQuill value={ this.state.text }
                     onChange={ this.handleChange }
+                    placeholder= "Write the text to format!"
                     modules={ StyleEditor.modules }
                     theme="snow"/>
       </div>

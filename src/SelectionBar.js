@@ -21,7 +21,7 @@ class SelectionBar extends React.Component {
                </div>
             </li>
             <li className="full-opacity tab-name float-right">
-              <div class="tab-contents copy-border-color">
+              <div className="tab-contents copy-border-color">
                 <span className="tab-name" onClick={this.props.copyButtonClick}>Copy</span>
               </div>
                
