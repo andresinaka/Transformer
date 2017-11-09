@@ -49,7 +49,7 @@ class App extends React.Component {
               <StyleEditor onChange={this.onChange} />
             </div>
           </div>
-          <div className="row">
+          <div className="row tabbar-bg-color">
             <SelectionBar copyButtonClick={this.copyButtonClick}/>
           </div>
           <div className="row half bg-color">
