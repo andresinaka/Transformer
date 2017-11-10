@@ -15,6 +15,8 @@ class SelectionBar extends React.Component {
 
     swifClickable.classList.remove("selected-tab");
     objClickable.classList.add("selected-tab");
+
+    this.props.objectiveCall();
   }
 
   swiftCall() {
@@ -23,6 +25,8 @@ class SelectionBar extends React.Component {
 
     objClickable.classList.remove("selected-tab");
     swifClickable.classList.add("selected-tab");
+
+    this.props.swiftCall();
   }
 
   render() {

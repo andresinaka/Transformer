@@ -18,6 +18,16 @@ class App extends React.Component {
 
     this.onChange = this.onChange.bind(this)
     this.copyButtonClick = this.copyButtonClick.bind(this)
+    this.objectiveCall = this.objectiveCall.bind(this)
+    this.swiftCall = this.swiftCall.bind(this)
+  }
+
+  objectiveCall() {
+    console.log("show objectice");
+  }
+
+  swiftCall() {
+    console.log("show swift");
   }
 
   onChange(text, contents) {
@@ -50,7 +60,10 @@ class App extends React.Component {
             </div>
           </div>
           <div className="row tabbar-bg-color">
-            <SelectionBar copyButtonClick={this.copyButtonClick}/>
+            <SelectionBar copyButtonClick={this.copyButtonClick} 
+                          swiftCall={this.swiftCall}
+                          objectiveCall={this.objectiveCall}
+            />
           </div>
           <div className="row half bg-color">
             <div className="col nopadding">
