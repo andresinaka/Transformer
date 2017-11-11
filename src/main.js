@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Counter from './Counter';
 import StyleEditor from './StyleEditor';
 import SwiftTranslator from './SwiftTranslator';
+import ObjectiveTranslator from './ObjectiveTranslator';
 import SelectionBar from './SelectionBar';
 import Highlight from 'react-highlight';
 
@@ -40,10 +41,12 @@ class App extends React.Component {
   }
 
   onChange(text, contents) {
-    let translator = new SwiftTranslator(text, contents);
+    let swiftTranslator = new SwiftTranslator(text, contents);
+    let objectiveTranslator = new ObjectiveTranslator(text, contents);
+
     this.setState({ 
-      swiftCode: translator.translate(),
-      objectiveCode: "this is objective c code"
+      swiftCode: swiftTranslator.translate(),
+      objectiveCode: objectiveTranslator.translate()
     })
 
     let codeToShow = this.state.objectiveCode;

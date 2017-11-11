@@ -1,10 +1,10 @@
-import FontColor from './swift-attributes/FontColor';
-import FontAttribute from './swift-attributes/FontAttribute';
-import BackgroundColor from './swift-attributes/BackgroundColor';
-import UnderlineStyle from './swift-attributes/UnderlineAttribute';
-import ParagraphAttribute from './swift-attributes/ParagraphAttribute';
+import FontColor from './objective-attributes/FontColor';
+import FontAttribute from './objective-attributes/FontAttribute';
+import BackgroundColor from './objective-attributes/BackgroundColor';
+import UnderlineStyle from './objective-attributes/UnderlineAttribute';
+import ParagraphAttribute from './objective-attributes/ParagraphAttribute';
 
-class SwiftTranslator {
+class ObjectiveTranslator {
   constructor(text, delta) {
     this.text = text;
     this.delta = delta;
@@ -14,7 +14,7 @@ class SwiftTranslator {
     let text = this.text;
     let delta = this.delta;
     let start = 0;
-    let attributedString = `let attributedString = NSMutableAttributedString(string: ${JSON.stringify(text)})\n`;
+    let attributedString = `NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString: @${JSON.stringify(text)}];\n`;
 
     let ops = delta["ops"];
     for (let index = 0; index < ops.length; index++) { 
@@ -72,13 +72,13 @@ class SwiftTranslator {
     if(attributes.length == 0) { return ""; }
 
     let cocoaAttributes =  
-    `let ${attributeName}: [NSAttributedStringKey : Any] = [\n` +
+    `NSDictionary <NSAttributedStringKey, id> *${attributeName} = @{\n` +
     `   ${attributes.join(",\n   ")}\n` +
-    `]\n` +
-    `attributedString.addAttributes(${attributeName}, range: ${range})\n`
+    `};\n` +
+    `[attributedString addAttributes:${attributeName} range: ${range}];\n`
 
     return cocoaAttributes;
   }
 }
 
-export default SwiftTranslator;
+export default ObjectiveTranslator;

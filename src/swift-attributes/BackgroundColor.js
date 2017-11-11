@@ -1,4 +1,4 @@
-import Attribute from './Attribute';
+import Attribute from '../Attribute';
 
 class BackgroundColor extends Attribute {
   parse() {

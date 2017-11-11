@@ -1,4 +1,4 @@
-import Attribute from './Attribute';
+import Attribute from '../Attribute';
 
 class FontAttribute extends Attribute {
   parse() {
@@ -17,8 +17,9 @@ class FontAttribute extends Attribute {
       let fontName = this.valueFromClass(attributes["font"]);
       let fontSize = attributes["size"].replace("px", "");
 
-      let font = `UIFont(name: "${fontName}", size: ${fontSize})!`;
-      return `NSAttributedStringKey.font: ${font}`;
+      let font = `[UIFont fontWithName:@"${fontName}" size:${fontSize}]`
+
+      return `NSFontAttributeName: ${font}`;
     }
   }
 
