@@ -13,7 +13,10 @@ class App extends React.Component {
     this.state = {
       text: "",
       code: "",
-      contents: {}
+      swiftCode: "",
+      objectiveCode: "",
+      contents: {},
+      showing: "swift"
     };
 
     this.onChange = this.onChange.bind(this)
@@ -23,19 +26,33 @@ class App extends React.Component {
   }
 
   objectiveCall() {
-    console.log("show objectice");
+    this.setState({
+      code: this.state.objectiveCode,
+      showing: "objective-c"
+    });
   }
 
   swiftCall() {
-    console.log("show swift");
+    this.setState({
+      code: this.state.swiftCode,
+      showing: "swift"
+    });
   }
 
   onChange(text, contents) {
-    let translator = new SwiftTranslator(text, contents)
-    let code = translator.translate()
+    let translator = new SwiftTranslator(text, contents);
+    this.setState({ 
+      swiftCode: translator.translate(),
+      objectiveCode: "this is objective c code"
+    })
+
+    let codeToShow = this.state.objectiveCode;
+    if (this.state.showing == "swift") {
+      codeToShow = this.state.swiftCode;
+    }
 
     this.setState({
-      code: code
+      code: codeToShow
     });
   }
 
