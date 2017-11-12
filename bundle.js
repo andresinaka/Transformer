@@ -14228,8 +14228,13 @@ var App = function (_React$Component) {
     };
 
     _reactGa2.default.initialize('UA-52353329-2', {
-      debug: false
+      debug: location.hostname == 'localhost'
     });
+
+    if (location.hostname == 'localhost') {
+      _reactGa2.default.set({ sendHitTask: null });
+    }
+
     _reactGa2.default.pageview(window.location.pathname);
 
     _this.onChange = _this.onChange.bind(_this);
