@@ -22,8 +22,13 @@ class App extends React.Component {
     };
 
     ReactGA.initialize('UA-52353329-2', {
-      debug: false,
+      debug: location.hostname == 'localhost',
     });
+
+    if (location.hostname == 'localhost') {
+      ReactGA.set({ sendHitTask: null });
+    }
+
     ReactGA.pageview(window.location.pathname);
 
     this.onChange = this.onChange.bind(this)
