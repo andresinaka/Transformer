@@ -6,6 +6,7 @@ import SwiftTranslator from './SwiftTranslator';
 import ObjectiveTranslator from './ObjectiveTranslator';
 import SelectionBar from './SelectionBar';
 import Highlight from 'react-highlight';
+import ReactGA from 'react-ga';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +21,11 @@ class App extends React.Component {
       showing: "swift"
     };
 
+    ReactGA.initialize('UA-52353329-2', {
+      debug: false,
+    });
+    ReactGA.pageview(window.location.pathname);
+
     this.onChange = this.onChange.bind(this)
     this.copyButtonClick = this.copyButtonClick.bind(this)
     this.objectiveCall = this.objectiveCall.bind(this)
@@ -27,6 +33,11 @@ class App extends React.Component {
   }
 
   objectiveCall() {
+    ReactGA.event({
+      category: 'Action',
+      action: 'Objective-C'
+    });
+
     this.setState({
       code: this.state.objectiveCode,
       showing: "objective-c"
@@ -34,6 +45,11 @@ class App extends React.Component {
   }
 
   swiftCall() {
+    ReactGA.event({
+      category: 'Action',
+      action: 'Swift'
+    });
+
     this.setState({
       code: this.state.swiftCode,
       showing: "swift"
@@ -60,6 +76,11 @@ class App extends React.Component {
   }
 
   copyButtonClick() {
+    ReactGA.event({
+      category: 'Action',
+      action: 'Copy'
+    });
+
     var textField = document.createElement('textarea')
     let text = this.state.code
 
