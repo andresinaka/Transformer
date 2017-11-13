@@ -100,7 +100,7 @@ class App extends React.Component {
   render() {
     return (
         <div className="container-fluid">
-          <div className="row half">
+          <div className="row top-half">
             <div className="col nopadding">
               <StyleEditor onChange={this.onChange} />
             </div>
@@ -111,7 +111,7 @@ class App extends React.Component {
                           objectiveCall={this.objectiveCall}
             />
           </div>
-          <div className="row half bg-color">
+          <div className="row bottom-half bg-color">
             <div className="col nopadding">
               <Highlight className='swift code-font-size'>
                 {this.state.code}

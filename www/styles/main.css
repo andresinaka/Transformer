@@ -155,8 +155,12 @@ pre {
   color: white; 
 }
 
-.half { 
-  height: 50%;
+.top-half {
+  height: calc(50% - 40px);
+}
+
+.bottom-half { 
+  height: calc(50% - 53px);
 }
 
 .nopadding {
