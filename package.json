@@ -8,7 +8,16 @@
     "build": "./node_modules/webpack/bin/webpack.js --progress --colors",
     "deploy": "./node_modules/gh-pages/bin/gh-pages -d www",
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
+  },
+  "ava": {
+    "files": [
+      "tests/**/*.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +39,7 @@
     "webpack-dev-middleware": "^1.12.0"
   },
   "devDependencies": {
+    "ava": "^0.23.0",
     "css-loader": "^0.28.7",
     "gh-pages": "^1.0.0",
     "style-loader": "^0.19.0"
