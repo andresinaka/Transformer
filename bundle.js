@@ -14316,7 +14316,7 @@ var App = function (_React$Component) {
         { className: 'container-fluid' },
         _react2.default.createElement(
           'div',
-          { className: 'row half' },
+          { className: 'row top-half' },
           _react2.default.createElement(
             'div',
             { className: 'col nopadding' },
@@ -14333,10 +14333,10 @@ var App = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'row half bg-color' },
+          { className: 'row bottom-half bg-color' },
           _react2.default.createElement(
             'div',
-            { className: 'col nopadding' },
+            { className: 'col nopadding scroll-enabled' },
             _react2.default.createElement(
               _reactHighlight2.default,
               { className: 'swift code-font-size' },

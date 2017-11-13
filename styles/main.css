@@ -1,3 +1,19 @@
+.bottom-bar {
+  background: #222;
+}
+
+.bottom-bar span {
+  padding: 5px;
+}
+
+body {
+  min-width: 470px;
+}
+
+.scroll-enabled {
+  overflow-y: auto;
+}
+
 .tabbar li .tab-name {
     color: #fff;
     padding: 5px 20px 5px 20px;
@@ -37,8 +53,13 @@ nav {
 }
 
 .float-right {
-  float:right;
+  float: right;
 }
+
+.float-left {
+  float: left;
+}
+
 
 .tabbar li {
     opacity: 0.3333;
@@ -135,6 +156,7 @@ nav {
 }
 
 pre {
+    background: red;
     white-space: pre-wrap;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
@@ -155,8 +177,12 @@ pre {
   color: white; 
 }
 
-.half { 
-  height: 50%;
+.top-half {
+  height: calc(50% - 40px);
+}
+
+.bottom-half { 
+  height: calc(50% - 53px - 26px);
 }
 
 .nopadding {
