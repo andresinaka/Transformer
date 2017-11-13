@@ -1,13 +1,32 @@
-Transformer
+<p align="center">
+  <img src="images/transformer.png"/>
+</p>
+
+[![Build Status](https://travis-ci.org/andresinaka/Transformer.svg)](https://travis-ci.org/andresinaka/Transformer)
+
+The main idea of this project is to have an online tool to be able to visually add formatting to a text and get back a `swift` and/or `objective-c` code to reproduce that formating.
+
+[Working App](https://andresinaka.github.io/Transformer/)
+
+Sample
 ---
-The main idea of this project is to have an online tool to be able to visually add formatting to a text and get back a swift attributed string with that format.
+![Static-Sample](images/sample.png)
 
 Modules
 ---
-- [TextEditor](https://quilljs.com)
-- [Syntax highlighting for the Web](https://highlightjs.org/)
+- [Quilljs](https://quilljs.com)
+- [Highlight.js](https://highlightjs.org/)
 
-  
+To Do
+---
+Please if you feel like sending a PR you are more than welcome to do it! The way the app is built is pretty simple and if you need some help to get started feel free to get in touch with me! 
+
+- [x] Basic structure and design.
+- [ ] Be able to drag and drop custom fonts to be used.
+- [ ] Use numbers for text size instead of clases.
+- [ ] Optimization of code generated when multiple lines with same format,
+- [ ] Keep supporting more formats! Or even for Cocoa?
+
 Usage
 ---
 - Install dependencies:
@@ -25,27 +44,12 @@ npm start
 - Compile
  
 ```
-npm run compile
+npm run-script build
 ```
 
-Sample
----
-![Static-Sample](images/static-sample.png)
-
-![Sample](images/sample.gif)
-
-To Do
----
-
-- [x] Basic structure
-- [x] Basic design
-- [x] Add `NSAttributedStringKey.foregroundColor`
-- [x] Add `NSAttributedStringKey.font`
-- [x] Add `NSAttributedStringKey.backgroundColor`
-- [x] Add button to copy the generated code.
-- [ ] Be able to drag and drop custom fonts to be used
-- [ ] Use numbers for text size instead of clases
-- [ ] Add tests
-- [ ] Keep adding support for more `NSAttributedStringKey`
-- [ ] Add support for objective-c
+- Test
+ 
+```
+npm test
+```
 

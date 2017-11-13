@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from './Counter';
 import StyleEditor from './StyleEditor';
 import SwiftTranslator from './SwiftTranslator';
 import ObjectiveTranslator from './ObjectiveTranslator';
