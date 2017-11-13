@@ -112,7 +112,7 @@ class App extends React.Component {
             />
           </div>
           <div className="row bottom-half bg-color">
-            <div className="col nopadding">
+            <div className="col nopadding scroll-enabled">
               <Highlight className='swift code-font-size'>
                 {this.state.code}
               </Highlight>
