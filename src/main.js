@@ -34,6 +34,21 @@ class App extends React.Component {
     this.copyButtonClick = this.copyButtonClick.bind(this)
     this.objectiveCall = this.objectiveCall.bind(this)
     this.swiftCall = this.swiftCall.bind(this)
+    this.onUnload = this.onUnload.bind(this)
+  }
+
+  onUnload(event) {
+    if(this.state.alertClose) {
+      event.returnValue = "You are going to lose your changes!";
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("beforeunload", this.onUnload)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("beforeunload", this.onUnload)
   }
 
   objectiveCall() {
@@ -44,7 +59,8 @@ class App extends React.Component {
 
     this.setState({
       code: this.state.objectiveCode,
-      showing: "objective-c"
+      showing: "objective-c",
+      alertClose: false
     });
   }
 
@@ -75,7 +91,8 @@ class App extends React.Component {
     }
 
     this.setState({
-      code: codeToShow
+      code: codeToShow,
+      alertClose: text.length > 10
     });
   }
 
