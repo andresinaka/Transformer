@@ -1,3 +1,13 @@
+.tooltip {
+ font-size: 10px !important;
+ padding-top: 8px !important;
+ padding-bottom: 8px !important;
+ padding-right: 16px !important;
+ padding-left: 17px !important;
+ width: 70px;
+ z-index: 1000;
+}
+
 .bottom-bar {
   background: #222;
 }
