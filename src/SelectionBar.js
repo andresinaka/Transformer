@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactTooltip from 'react-tooltip'
 
 class SelectionBar extends React.Component {
   constructor(props) {
@@ -7,6 +8,16 @@ class SelectionBar extends React.Component {
 
     this.objectiveCall = this.objectiveCall.bind(this);
     this.swiftCall = this.swiftCall.bind(this);
+    this.copyButtonClick = this.copyButtonClick.bind(this);
+  }
+
+  copyButtonClick() {
+    this.props.copyButtonClick();
+    ReactTooltip.show(this.refs.foo)
+
+    setTimeout(function() { 
+      ReactTooltip.hide();
+    }, 800);
   }
 
   objectiveCall() {
@@ -43,9 +54,16 @@ class SelectionBar extends React.Component {
                   <span className="tab-name" onClick={this.objectiveCall}>Objective-C</span>
                </div>
             </li>
-            <li className="full-opacity tab-name float-right">
+            <ReactTooltip
+              className="tooltip"
+              place="top"
+              type="dark"
+              effect="solid"
+              event="custom"
+            />
+            <li ref='foo' data-tip='Copied!' className="full-opacity tab-name float-right">
               <div className="tab-contents copy-border-color">
-                <span className="tab-name" onClick={this.props.copyButtonClick}>Copy</span>
+                <span className="tab-name" onClick={this.copyButtonClick}>Copy</span>
               </div>
             </li>
          </ul>
