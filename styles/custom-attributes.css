@@ -61,3 +61,31 @@
 .ql-snow .ql-picker.ql-underline-style {
     width: 120px;
 }
+
+.ql-picker-label[data-value="style-double"]::before{
+  text-decoration: underline;
+  border-bottom: 1px double;
+}
+
+.ql-picker-label[data-value="style-thick"]::before{
+  text-decoration: none;
+  border-bottom: 3px solid;
+}
+
+.ql-picker-label[data-value="style-single"]::before{
+  text-decoration: underline;
+}
+
+.ql-picker-item[data-value="style-double"]::before{
+  text-decoration: underline;
+  border-bottom: 1px double;
+}
+
+.ql-picker-item[data-value="style-thick"]::before{
+  text-decoration: none;
+  border-bottom: 3px solid;
+}
+
+.ql-picker-item[data-value="style-single"]::before{
+  text-decoration: underline;
+}
