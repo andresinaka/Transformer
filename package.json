@@ -5,7 +5,7 @@
   "main": "index.js",
   "homepage": "https://andresinaka.github.io/transformer",
   "scripts": {
-    "build": "./node_modules/webpack/bin/webpack.js --progress --colors",
+    "build": "./node_modules/webpack/bin/webpack.js --env.production --progress --colors",
     "deploy": "./node_modules/gh-pages/bin/gh-pages -d www",
     "start": "node server.js",
     "test": "ava"
