@@ -34,31 +34,32 @@
 }
 
 /* Underline Styles */
-.pattern-dash{
-  text-decoration: none;
+.underline-style-single{
+  border-bottom: 1px solid black;
+}
+
+.underline-pattern-dash{
   border-bottom: dashed;
 }
 
-.pattern-dot{
-  text-decoration: none;
+.underline-pattern-dot{
   border-bottom: dotted;
 }
 
-.style-double {
-  border-bottom: 1px double;
+.underline-style-double {
+  border-bottom: 3px double black;
 }
 
-.style-thick {
-  text-decoration: none;
+.underline-style-thick {
   border-bottom: 3px solid;
 }
 
-.ql-snow .ql-picker.ql-underline-style .ql-picker-label[data-label]:not([data-label=''])::before,
-.ql-snow .ql-picker.ql-underline-style .ql-picker-item[data-label]:not([data-label=''])::before {
+.ql-snow .ql-picker.ql-underline .ql-picker-label[data-label]:not([data-label=''])::before,
+.ql-snow .ql-picker.ql-underline .ql-picker-item[data-label]:not([data-label=''])::before {
   content: attr(data-label);
 }
 
-.ql-snow .ql-picker.ql-underline-style {
+.ql-snow .ql-picker.ql-underline {
     width: 120px;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactQuill, { Quill, Mixin, Toolbar }  from 'react-quill';
-import CustomSnow from "./CustomSnow"
+
 import UnderlineStyle from "./custom-formats/UnderlineStyle.js"
 
 let Inline = Quill.import('blots/inline');
@@ -15,7 +15,6 @@ Font.whitelist = ['helvetica-neue', 'helvetica-neue-bold', 'helvetica-neue-light
 Quill.register(Font, true);
 Quill.register(UnderlineStyle)
 Quill.register(SizeStyle, true);
-Quill.register('themes/snow', CustomSnow, true);
 
 const CustomToolbar = () => (
   <div id="toolbar">
@@ -30,8 +29,8 @@ const CustomToolbar = () => (
       <option value="18px">18 Points</option>
       <option value="32px">32 Points</option>
     </select>
-    <select className="ql-underline-style">
-      <option value="false" defaultValue>.styleNone</option>
+    <select className="ql-underline">
+      <option defaultValue>.styleNone</option>
       <option value="style-single">.styleSingle</option>
       <option value="style-double">.styleDouble</option>
       <option value="style-thick">.styleThick</option>

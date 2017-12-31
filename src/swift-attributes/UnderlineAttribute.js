@@ -4,8 +4,8 @@ class UnderlineAttribute extends Attribute {
 
   parse() {
     let attributes = this.attributes
-    if (attributes && "underline-style" in attributes) {
-      let underline = this.valueFromClass(attributes["underline-style"]);
+    if (attributes && "underline" in attributes) {
+      let underline = this.valueFromClass(attributes["underline"]);
 
       if(!underline) { return null }
 
