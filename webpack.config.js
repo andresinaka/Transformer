@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 const path = require('path');
 
-module.exports = env => {
+let config = module.exports = env => {
 
   config = {
     context: path.join(__dirname, 'src'),
@@ -61,3 +61,4 @@ module.exports = env => {
   }
   return config;
 }
+

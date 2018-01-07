@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 const app = express();
  
-const compiler = webpack(webpackConfig);
+const compiler = webpack(webpackConfig(process.env));
  
 app.use(express.static(__dirname + '/www'));
  
