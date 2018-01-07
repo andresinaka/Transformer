@@ -2,21 +2,12 @@ import ReactQuill, { Quill, Mixin, Toolbar } from 'react-quill';
 
 let Parchment = Quill.import('parchment')
 
-class UnderlineStyle extends Parchment.Attributor.Class {
-  add (node, value) {
-    if (value === ".styleNone") {
-      this.remove(node)
-      return true
-    } else {
-      return super.add(node, value)
-    }
-  }
-}
+class UnderlineStyle extends Parchment.Attributor.Class {}
 
 var underlineStyle = new UnderlineStyle('underline', 'underline', {
   scope: Parchment.Scope.INLINE, 
   whitelist: [
-    false,
+    "style-none",
     "style-single",
     "style-thick",
     "style-double",

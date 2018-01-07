@@ -30,10 +30,10 @@ const CustomToolbar = () => (
       <option value="32px">32 Points</option>
     </select>
     <select className="ql-underline">
-      <option defaultValue>.styleNone</option>
-      <option value="style-single">.styleSingle</option>
-      <option value="style-double">.styleDouble</option>
-      <option value="style-thick">.styleThick</option>
+      <option value="style-none" defaultValue>Underline</option>
+      <option value="style-single">Single</option>
+      <option value="style-double">Double</option>
+      <option value="style-thick">Thick</option>
     </select>
     <select className="ql-align"></select>
     <select className="ql-color"/>
