@@ -34,7 +34,7 @@ class SwiftTranslator {
 
       if(attributes.length > 0) {
         attributedString = attributedString + '\n' + this.addAttributes(
-          `NSMakeRange(${start}, ${length})`,
+          `NSRange(location: ${start}, length: ${length})`,
           attributeName,
           attributes
         );
