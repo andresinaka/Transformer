@@ -6,7 +6,7 @@ test("Underline", t => {
   let underline = new UnderlineAttribute(item).parse()
 
   t.deepEqual(
-    "NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue",
+    ".underlineStyle: NSUnderlineStyle.styleSingle.rawValue",
     underline
   );
 });

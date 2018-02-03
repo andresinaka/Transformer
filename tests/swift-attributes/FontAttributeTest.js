@@ -6,7 +6,7 @@ test('Only font parameter', t => {
   let fontAttribute = new FontAttribute(item).parse();
 
   t.deepEqual(
-    'NSAttributedStringKey.font: UIFont(name: "HelveticaNeue", size: 13)!',
+    '.font: UIFont(name: "HelveticaNeue", size: 13)!',
     fontAttribute
   );
 });
@@ -16,7 +16,7 @@ test('Only size parameter', t => {
   let fontAttribute = new FontAttribute(item).parse();
 
   t.deepEqual(
-    'NSAttributedStringKey.font: UIFont(name: "HelveticaNeue", size: 25)!',
+    '.font: UIFont(name: "HelveticaNeue", size: 25)!',
     fontAttribute
   );
 });
@@ -26,7 +26,7 @@ test('name and size parameters', t => {
   let fontAttribute = new FontAttribute(item).parse();
 
   t.deepEqual(
-    'NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Bold", size: 30)!',
+    '.font: UIFont(name: "HelveticaNeue-Bold", size: 30)!',
     fontAttribute
   );
 });
