@@ -22,7 +22,7 @@ class ParagraphAttribute extends Attribute {
   parse() {
     let attributes = this.attributes;
     if (attributes && "align" in attributes) {      
-      return `NSAttributedStringKey.paragraphStyle: ${this.paragraphName}`;
+      return `.paragraphStyle: ${this.paragraphName}`;
     }
   }
 

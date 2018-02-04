@@ -11,7 +11,7 @@ test("Paragraph", t => {
   );
 
   t.deepEqual(
-    "NSAttributedStringKey.paragraphStyle: paragraphStyle1",
+    ".paragraphStyle: paragraphStyle1",
     paragraphAttribute.parse()
   );
 });

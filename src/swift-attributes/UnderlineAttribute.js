@@ -9,7 +9,7 @@ class UnderlineAttribute extends Attribute {
 
       if(!underline) { return null }
 
-      return `NSAttributedStringKey.underlineStyle: NSUnderlineStyle.${underline}.rawValue`;
+      return `.underlineStyle: NSUnderlineStyle.${underline}.rawValue`;
     }
   }
 

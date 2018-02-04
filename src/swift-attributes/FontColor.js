@@ -7,7 +7,7 @@ class FontColor extends Attribute {
       let [red, green, blue] = this.hexToRgb(attributes["color"]);
 
       let color = `UIColor(red: ${red}/255, green: ${green}/255, blue: ${blue}/255, alpha: 1.0)`;
-      return `NSAttributedStringKey.foregroundColor: ${color}`;
+      return `.foregroundColor: ${color}`;
     }
   }
 }

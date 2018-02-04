@@ -18,7 +18,7 @@ class FontAttribute extends Attribute {
       let fontSize = attributes["size"].replace("px", "");
 
       let font = `UIFont(name: "${fontName}", size: ${fontSize})!`;
-      return `NSAttributedStringKey.font: ${font}`;
+      return `.font: ${font}`;
     }
   }
 
