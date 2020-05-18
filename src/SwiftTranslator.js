@@ -72,7 +72,7 @@ class SwiftTranslator {
     if(attributes.length == 0) { return ""; }
 
     let cocoaAttributes =  
-    `let ${attributeName}: [NSAttributedStringKey : Any] = [\n` +
+    `let ${attributeName}: [NSAttributedString.Key : Any] = [\n` +
     `   ${attributes.join(",\n   ")}\n` +
     `]\n` +
     `attributedString.addAttributes(${attributeName}, range: ${range})\n`
